@@ -72,7 +72,26 @@
 
     <section class="updates-section section-wrap" id="updates"><div class="section-heading"><p class="eyebrow">STAY UP TO DATE</p><h2>New improvements.<br><span>One place to find them.</span></h2><p>Check the latest A1 FAMILY MEDIA version and read what's changed.</p></div><div class="updates-panel"><div><span class="update-label">LATEST VERSION</span><strong id="latest-version">1.6</strong><span id="release-date">Released 3 November 2026</span></div><a class="button button-primary" href="https://github.com/tapiwanashemanyonga-gif/Media-player/releases/latest/download/app-release.apk">Download latest APK <span>↓</span></a></div><p class="update-footnote">If you already have A1 FAMILY MEDIA installed, open the app to check for an update notice. Updates are also listed here.</p></section>
     <section class="download-section section-wrap" id="download"><div class="download-panel"><div class="download-orb"></div><p class="eyebrow">A1 FAMILY MEDIA</p><h2>Take your media<br>with you.</h2><p>Download the official Android app and enjoy your music and videos in one place.</p><a class="button button-primary" href="https://github.com/tapiwanashemanyonga-gif/Media-player/releases/latest/download/app-release.apk">Download A1 FAMILY MEDIA <span>↓</span></a><span class="download-note">Android APK · Official release</span></div></section>
-    <section class="feedback-section section-wrap" id="feedback"><div class="section-heading"><p class="eyebrow">YOUR VOICE SHAPES A1</p><h2>Tell us what<br><span>could be better.</span></h2><p>Share an upgrade idea, report a problem, or suggest an improvement. Feedback helps guide future versions.</p></div><div class="feedback-grid"><a class="feedback-card" href="https://github.com/tapiwanashemanyonga-gif/Media-player/issues/new?template=upgrade-idea.yml"><span class="feedback-symbol">✦</span><strong>Upgrade idea</strong><span>Tell us what feature you would love to see.</span><b>Post an idea →</b></a><a class="feedback-card" href="https://github.com/tapiwanashemanyonga-gif/Media-player/issues/new?template=complaint.yml"><span class="feedback-symbol">!</span><strong>Complaint or bug</strong><span>Report something that is not working properly.</span><b>Report a problem →</b></a><a class="feedback-card" href="https://github.com/tapiwanashemanyonga-gif/Media-player/issues/new?template=improvement.yml"><span class="feedback-symbol">↗</span><strong>Improvement suggestion</strong><span>Suggest a change to make A1 better.</span><b>Suggest an improvement →</b></a></div><p class="feedback-note">Feedback is submitted through the A1 FAMILY MEDIA public issue board. A GitHub account is required, and submissions may be visible to the public. Please do not include passwords, phone numbers or private information.</p></section>
+    <section class="feedback-section section-wrap" id="feedback">
+      <div class="section-heading"><p class="eyebrow">YOUR VOICE SHAPES A1</p><h2>Tell us what<br><span>could be better.</span></h2><p>Share an upgrade idea, report a problem, or suggest an improvement. You do not need a GitHub account.</p></div>
+      <div class="feedback-panel">
+        <form id="feedback-form">
+          <label for="feedback-type">What is your feedback about?</label>
+          <select id="feedback-type" name="type" required>
+            <option value="Upgrade idea">Upgrade idea</option>
+            <option value="Complaint or bug">Complaint or bug</option>
+            <option value="Improvement suggestion">Improvement suggestion</option>
+          </select>
+          <label for="feedback-name">Your name (optional)</label>
+          <input id="feedback-name" name="name" type="text" maxlength="80" placeholder="Enter your name">
+          <label for="feedback-message">Your message</label>
+          <textarea id="feedback-message" name="message" rows="6" maxlength="5000" required placeholder="Tell us what you think or describe the problem..."></textarea>
+          <button class="button button-primary" type="submit">Send feedback <span>→</span></button>
+        </form>
+        <div class="feedback-contact"><span class="update-label">CONTACT A1 FAMILY MEDIA</span><a href="mailto:dailywalk.app1@gmail.com">dailywalk.app1@gmail.com</a><p>When you send the form, your email app will open with your feedback ready to send. Review it and tap Send. Your message goes directly to this address.</p></div>
+      </div>
+      <p class="feedback-note">No GitHub account is needed. The form opens your email app; it does not send automatically. Please do not include passwords or other sensitive information.</p>
+    </section>
   </main>
 
   <footer class="site-footer"><a class="brand" href="#home"><span class="brand-mark"><span></span><span></span><span></span></span><span>A1 <b>FAMILY MEDIA</b></span></a><span>Music & video, made simple.</span><div><a href="privacy.html">Privacy policy</a><span>© <span id="year">2026</span> A1 FAMILY MEDIA</span></div></footer>
@@ -86,6 +105,18 @@
       if (version && release.versionName) version.textContent = release.versionName;
       if (date && release.releasedAt) date.textContent = 'Released ' + new Date(release.releasedAt + 'T00:00:00').toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
     }).catch(() => {});
+
+    const feedbackForm = document.getElementById('feedback-form');
+    if (feedbackForm) feedbackForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const type = document.getElementById('feedback-type').value;
+      const name = document.getElementById('feedback-name').value.trim() || 'Not provided';
+      const message = document.getElementById('feedback-message').value.trim();
+      if (!message) return;
+      const subject = encodeURIComponent('A1 FAMILY MEDIA - ' + type);
+      const body = encodeURIComponent('Feedback type: ' + type + '\\nName: ' + name + '\\n\\nMessage:\\n' + message);
+      window.location.href = 'mailto:dailywalk.app1@gmail.com?subject=' + subject + '&body=' + body;
+    });
   </script>
 </body>
 </html>
