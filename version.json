@@ -1,7 +1,7 @@
 {
-  "versionName": "1.5",
-  "versionCode": 6,
+  "versionName": "1.6",
+  "versionCode": 7,
   "downloadUrl": "https://github.com/tapiwanashemanyonga-gif/Media-player/releases/latest/download/A1-Family-Media.apk",
-  "releaseNotes": "A1 FAMILY MEDIA 1.5 — music and video player improvements, two separate Adsterra banner placements, and performance refinements.",
+  "releaseNotes": "A1 FAMILY MEDIA 1.6 — introduces an automatic in-app update check. When a newer official release is available, the app will show an update message and a download option.",
   "releasedAt": "2026-11-03"
 }
