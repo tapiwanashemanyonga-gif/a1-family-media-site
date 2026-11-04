@@ -4,7 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#100b1c">
-  <meta name="description" content="A1 FAMILY MEDIA — your music and video, together in one simple Android player.">
+  <meta name="description" content="A1 FAMILY MEDIA brings your Android music and videos together, with a built-in space to write, save and export your own song lyrics.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A1 FAMILY MEDIA | Music, videos & your lyrics">
+  <meta property="og:description" content="Enjoy your music and videos. Write or paste your own lyrics, save them on your device and export them as a PDF.">
+  <meta property="og:url" content="https://a1-family-media-site.onrender.com/">
+  <meta property="og:image" content="https://a1-family-media-site.onrender.com/a1-family-media-logo.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="A1 FAMILY MEDIA | Music, videos & your lyrics">
+  <meta name="twitter:description" content="A simple Android media player with a place for your own song lyrics.">
   <title>A1 FAMILY MEDIA | Music & Video Player</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,6 +28,7 @@
     </a>
     <nav aria-label="Main navigation">
       <a href="#features">Features</a>
+      <a href="songwriters.html">For creators</a>
       <a href="#about">About</a>
       <a href="#updates">Updates</a>
       <a href="#feedback">Feedback</a>
@@ -68,6 +77,29 @@
       </div>
     </section>
 
+    <section class="lyrics-section section-wrap" id="lyrics">
+      <div class="lyrics-copy">
+        <p class="eyebrow">05 / FOR YOUR CREATIVE SIDE</p>
+        <h2>Your music.<br><span>Your words.</span></h2>
+        <p>Have a lyric idea while listening? Give it a place to live. A1 FAMILY MEDIA includes a simple lyrics editor for the song you are listening to.</p>
+        <ul class="lyrics-steps">
+          <li><span>01</span><div><strong>Write or paste</strong><small>Put your own words into the lyrics editor for the selected track.</small></div></li>
+          <li><span>02</span><div><strong>Save on your device</strong><small>Keep your lyrics locally for that track on this device.</small></div></li>
+          <li><span>03</span><div><strong>Export as PDF</strong><small>Create a PDF copy you can keep or share yourself.</small></div></li>
+        </ul>
+        <a class="button button-primary" href="songwriters.html">Explore the lyrics feature <span>→</span></a>
+      </div>
+      <div class="lyrics-preview" aria-label="Illustration of a songwriter's lyric notes">
+        <div class="lyrics-paper">
+          <div class="lyrics-paper-top"><span>A1 / LYRICS NOTES</span><span>♫</span></div>
+          <div class="lyrics-lines"><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="lyrics-save"><span>✓</span> Saved on this device</div>
+          <div class="lyrics-export">PDF EXPORT <b>↗</b></div>
+        </div>
+        <p>For artists, songwriters and everyone who loves music.</p>
+      </div>
+    </section>
+
     <section class="about-section" id="about"><div class="about-inner"><div><p class="eyebrow">THE A1 EXPERIENCE</p><h2>Your media,<br><span>your way.</span></h2></div><p>A1 FAMILY MEDIA brings your local audio and video together in a clean Android experience. Whether you are settling in with a playlist or opening a video, your media is never far away.</p></div></section>
 
     <section class="updates-section section-wrap" id="updates"><div class="section-heading"><p class="eyebrow">STAY UP TO DATE</p><h2>New improvements.<br><span>One place to find them.</span></h2><p>Check the latest A1 FAMILY MEDIA version and read what's changed.</p></div><div class="updates-panel"><div><span class="update-label">LATEST VERSION</span><strong id="latest-version">1.6</strong><span id="release-date">Released 3 November 2026</span></div><div class="download-count" aria-live="polite"><span class="update-label">TOTAL APK DOWNLOADS</span><strong id="apk-download-count">Loading…</strong><span>Official release downloads</span></div><a class="button button-primary" href="https://github.com/tapiwanashemanyonga-gif/Media-player/releases/latest/download/app-release.apk">Download latest APK <span>↓</span></a></div><p class="update-footnote">If you already have A1 FAMILY MEDIA installed, open the app to check for an update notice. Updates are also listed here.</p></section>
@@ -94,7 +126,7 @@
     </section>
   </main>
 
-  <footer class="site-footer"><a class="brand" href="#home"><img class="brand-logo" src="a1-family-media-logo.svg" alt="" width="38" height="38"><span>A1 <b>FAMILY MEDIA</b></span></a><span>Music & video, made simple.</span><div><a href="privacy.html">Privacy policy</a><span>© <span id="year">2026</span> A1 FAMILY MEDIA</span></div></footer>
+  <footer class="site-footer"><a class="brand" href="#home"><img class="brand-logo" src="a1-family-media-logo.svg" alt="" width="38" height="38"><span>A1 <b>FAMILY MEDIA</b></span></a><span>Music, videos & your words.</span><div><a href="songwriters.html">For creators</a><a href="privacy.html">Privacy policy</a><span>© <span id="year">2026</span> A1 FAMILY MEDIA</span></div></footer>
   <script>
     fetch('version.json', { cache: 'no-store' }).then(response => {
       if (!response.ok) throw new Error('Version information unavailable');
