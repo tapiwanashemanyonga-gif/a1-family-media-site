@@ -87,3 +87,14 @@
 .creator-cta h2{font:600 clamp(32px,4vw,48px)/1.1 var(--display);margin:0 0 12px}.creator-cta p{color:var(--muted);max-width:580px}.creator-disclosure{font-size:11px;color:var(--muted);margin-top:18px}
 @media(max-width:800px){.lyrics-section,.creator-hero{grid-template-columns:1fr}.lyrics-preview{min-height:300px}.creator-hero{padding:65px 7vw}.creator-hero-art{min-height:300px}.creator-workflow{grid-template-columns:1fr}}
 @media(max-width:520px){.lyrics-section{gap:35px}.lyrics-preview{padding:20px}.creator-hero h1{font-size:49px}.creator-content{padding:65px 6vw}.creator-cta{margin:0 6vw 65px;padding:28px}}
+
+/* Embedded A1 FAMILY MEDIA product demonstration */
+.video-showcase{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,.72fr);gap:7vw;align-items:center;background:linear-gradient(120deg,#151021,#1c142b)}
+.video-showcase-copy h2{font:600 clamp(38px,4.8vw,58px)/1.05 var(--display);letter-spacing:-.06em;margin:0}
+.video-showcase-copy h2 span{color:var(--purple)}
+.video-showcase-copy>p:not(.eyebrow){color:var(--muted);max-width:470px;margin:20px 0}
+.video-frame{width:min(100%,390px);justify-self:center;aspect-ratio:800/1340;overflow:hidden;border:1px solid rgba(185,154,245,.35);border-radius:22px;background:#090610;box-shadow:0 25px 70px rgba(0,0,0,.38)}
+.video-frame iframe{display:block;width:100%;height:100%;border:0}
+.creator-video-showcase{padding-top:75px;padding-bottom:75px}
+@media(max-width:800px){.video-showcase{grid-template-columns:1fr;gap:35px}.video-frame{width:min(100%,340px)}}
+@media(max-width:520px){.video-showcase{padding:65px 6vw}.video-frame{width:min(100%,310px);border-radius:17px}}
