@@ -9,10 +9,10 @@
 **Official Android APK:** https://github.com/tapiwanashemanyonga-gif/Media-player/releases/latest/download/app-release.apk
 
 ## Product truth — keep every post accurate
-A1 FAMILY MEDIA is an Android music and video player. Its lyrics editor lets a user write or paste their own lyrics for the selected song, save them locally on the device for that track, and export them as a PDF. Do not claim automatic/AI lyric generation, automatic online lyric fetching, cloud sync, publishing/distribution, collaboration, or guaranteed copyright protection.
+A1 FAMILY MEDIA is an Android music and video player. Its lyrics editor lets a user write or paste their own lyrics for a selected song, beat or instrumental, save them locally on the device for that track, and export them as a PDF. Do not claim automatic/AI lyric generation, automatic online lyric fetching, cloud sync, publishing/distribution, collaboration, or guaranteed copyright protection.
 
 ## Core message
-Enjoy your music and videos. When inspiration comes, write or paste your own lyrics, save them on your device and export a PDF.
+Enjoy your music and videos. When inspiration comes from a song, beat or instrumental, write or paste your own lyrics, save them on your device and export a PDF.
 
 ## 3 content pillars
 1. **Songwriters / artists:** capturing ideas, keeping lyrics organised with the selected track, PDF export.
@@ -20,9 +20,9 @@ Enjoy your music and videos. When inspiration comes, write or paste your own lyr
 3. **Everyday creators:** a simple Android app that combines listening, watching and personal lyric notes.
 
 ## 20-second vertical video script
-**0–3 sec — Hook:** “Ever hear a beat and suddenly get a line for a song?”  
+**0–3 sec — Hook:** “Got a song, beat or instrumental inspiring your next lyrics?”  
 **3–7 sec — Show:** Screen-record opening A1 FAMILY MEDIA and selecting a track.  
-**7–12 sec — Show:** Open the lyrics editor; type or paste sample words you wrote yourself.  
+**7–12 sec — Show:** Choose a song, beat or instrumental; open the lyrics editor and type or paste sample words you wrote yourself.  
 **12–16 sec — Show:** Tap Save, then show the PDF export option.  
 **16–20 sec — CTA:** “Your music. Your words. Your creativity. Explore A1 FAMILY MEDIA — link in bio.”
 
@@ -42,7 +42,7 @@ Use your own original sample lyrics or text you have permission to show. Hide pe
 ### General launch
 🎵 Your music. Your words. Your creativity.
 
-A1 FAMILY MEDIA brings your Android music and videos together — and gives you a simple lyrics editor for your own words.
+A1 FAMILY MEDIA brings your Android music and videos together — and gives you a simple lyrics editor to write your own words to a song, beat or instrumental.
 
 ✍️ Write or paste your lyrics for a selected song  
 💾 Save them on your device  
@@ -58,14 +58,14 @@ Download: https://github.com/tapiwanashemanyonga-gif/Media-player/releases/lates
 ### Artist / songwriter
 That line you just wrote deserves to be kept. ✍️
 
-Use A1 FAMILY MEDIA to write or paste your own lyrics for a selected track, save them locally on your device and export a PDF copy.
+Use A1 FAMILY MEDIA to write or paste your own lyrics to a selected song, beat or instrumental, save them locally on your device and export a PDF copy.
 
 See how it works: https://a1-family-media-site.onrender.com/songwriters.html
 
 #Songwriter #MusicCreators #IndependentArtist #A1FamilyMedia
 
 ### Music lover
-Your favourite music and videos, together in one Android player. And when a lyric idea comes, write it down in the built-in lyrics editor.
+Your favourite music and videos, together in one Android player. And when a song, beat or instrumental inspires you, write your own lyrics in the built-in editor.
 
 Discover A1 FAMILY MEDIA: https://a1-family-media-site.onrender.com
 
