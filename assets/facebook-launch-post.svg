@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200">
+<defs>
+ <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#100B1C"/><stop offset=".55" stop-color="#24104B"/><stop offset="1" stop-color="#080713"/></linearGradient>
+ <linearGradient id="violet" x2="1" y2="1"><stop stop-color="#B99AF5"/><stop offset=".55" stop-color="#8E67D7"/><stop offset="1" stop-color="#5B25C9"/></linearGradient>
+ <linearGradient id="cyan" x2="1"><stop stop-color="#35D6E8"/><stop offset="1" stop-color="#8C74FF"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+ </defs>
+ <rect width="1200" height="1200" rx="64" fill="url(#bg)"/>
+ <circle cx="1000" cy="150" r="260" fill="#8E45E8" opacity=".2" filter="url(#glow)"/>
+ <circle cx="160" cy="920" r="250" fill="#35D6E8" opacity=".1" filter="url(#glow)"/>
+ <path d="M0 365 Q260 260 520 365 T1200 350" fill="none" stroke="#9D5BFF" stroke-width="5" opacity=".6"/>
+ <path d="M0 390 Q260 285 520 390 T1200 375" fill="none" stroke="#35D6E8" stroke-width="2" opacity=".35"/>
+ <g transform="translate(82 78)">
+  <rect width="132" height="132" rx="34" fill="url(#violet)" stroke="#E8D9FF" stroke-width="5"/>
+  <path d="M43 32 L43 100 L102 66 Z" fill="#fff"/>
+  <path d="M105 27 V78 Q105 98 83 98 Q65 98 65 82 Q65 67 91 65 V40 Z" fill="#251044"/>
+  <text x="66" y="121" font-family="Arial,sans-serif" font-size="15" font-weight="900" fill="#fff" text-anchor="middle">A1 FAMILY</text>
+ </g>
+ <text x="250" y="145" font-family="Arial,sans-serif" font-size="61" font-weight="900" fill="#fff">A1 FAMILY MEDIA</text>
+ <text x="254" y="205" font-family="Arial,sans-serif" font-size="31" font-weight="700" fill="#CBB2FF">MUSIC &amp; VIDEO PLAYER FOR ANDROID</text>
+ <text x="600" y="295" font-family="Arial,sans-serif" font-size="56" font-weight="900" fill="#fff" text-anchor="middle">YOUR MEDIA. ONE PLAYER.</text>
+ <text x="600" y="342" font-family="Arial,sans-serif" font-size="27" fill="#D8C9F5" text-anchor="middle">Enjoy the music and videos already on your device.</text>
+ <g transform="translate(82 440)">
+  <rect width="490" height="112" rx="26" fill="#251744" stroke="#9B72E8" stroke-width="3"/>
+  <circle cx="58" cy="56" r="34" fill="url(#violet)"/><path d="M49 36 L49 76 L80 56 Z" fill="#fff"/>
+  <text x="116" y="48" font-family="Arial,sans-serif" font-size="31" font-weight="800" fill="#fff">PLAY MUSIC OFFLINE</text>
+  <text x="116" y="83" font-family="Arial,sans-serif" font-size="22" fill="#D8C9F5">Enjoy your local audio collection</text>
+ </g>
+ <g transform="translate(82 574)">
+  <rect width="490" height="112" rx="26" fill="#251744" stroke="#9B72E8" stroke-width="3"/>
+  <circle cx="58" cy="56" r="34" fill="#E33E77"/><path d="M49 36 L49 76 L80 56 Z" fill="#fff"/>
+  <text x="116" y="48" font-family="Arial,sans-serif" font-size="31" font-weight="800" fill="#fff">WATCH YOUR VIDEOS</text>
+  <text x="116" y="83" font-family="Arial,sans-serif" font-size="22" fill="#D8C9F5">Fullscreen video playback</text>
+ </g>
+ <g transform="translate(82 708)">
+  <rect width="490" height="112" rx="26" fill="#251744" stroke="#9B72E8" stroke-width="3"/>
+  <circle cx="58" cy="56" r="34" fill="#35A978"/><path d="M38 57 L53 72 L80 40" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+  <text x="116" y="48" font-family="Arial,sans-serif" font-size="31" font-weight="800" fill="#fff">PLAYLISTS &amp; FAVOURITES</text>
+  <text x="116" y="83" font-family="Arial,sans-serif" font-size="22" fill="#D8C9F5">Shuffle and repeat controls</text>
+ </g>
+ <g transform="translate(630 435)">
+  <rect width="475" height="385" rx="42" fill="#090817" stroke="url(#violet)" stroke-width="8"/>
+  <rect x="24" y="25" width="427" height="335" rx="28" fill="#17102B"/>
+  <text x="237" y="82" font-family="Arial,sans-serif" font-size="34" font-weight="800" fill="#fff" text-anchor="middle">A1 FAMILY MEDIA</text>
+  <path d="M55 145 Q145 80 235 145 T415 145" fill="none" stroke="#B99AF5" stroke-width="7"/>
+  <g fill="url(#violet)"><rect x="62" y="190" width="35" height="95" rx="8"/><rect x="110" y="160" width="35" height="125" rx="8"/><rect x="158" y="205" width="35" height="80" rx="8"/><rect x="206" y="135" width="35" height="150" rx="8"/><rect x="254" y="180" width="35" height="105" rx="8"/><rect x="302" y="155" width="35" height="130" rx="8"/><rect x="350" y="200" width="35" height="85" rx="8"/></g>
+  <text x="237" y="325" font-family="Arial,sans-serif" font-size="22" fill="#D8C9F5" text-anchor="middle">PLAY • CREATE • ENJOY</text>
+ </g>
+ <g transform="translate(82 870)">
+  <rect width="1023" height="150" rx="30" fill="#F4ECFF"/>
+  <circle cx="85" cy="75" r="48" fill="url(#violet)"/>
+  <path d="M85 42 V100 M60 76 L85 101 L110 76" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="160" y="63" font-family="Arial,sans-serif" font-size="42" font-weight="900" fill="#391A70">WRITE YOUR OWN LYRICS</text>
+  <text x="160" y="108" font-family="Arial,sans-serif" font-size="27" fill="#251744">Save your words on your device • Export as PDF</text>
+ </g>
+ <text x="600" y="1090" font-family="Arial,sans-serif" font-size="35" font-weight="900" fill="#fff" text-anchor="middle">DOWNLOAD THE ANDROID APK</text>
+ <text x="600" y="1137" font-family="Arial,sans-serif" font-size="18" fill="#D7C5FF" text-anchor="middle">github.com/tapiwanashemanyonga-gif/Media-player/releases/latest</text>
+</svg>
