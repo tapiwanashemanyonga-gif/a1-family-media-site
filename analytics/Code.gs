@@ -19,7 +19,7 @@ function setup() {
   }
 
   ensureSheet(spreadsheet, "Visitors", ["First seen (UTC)", "Hashed browser ID"]);
-  ensureSheet(spreadsheet, "Downloaders", ["First download (UTC)", "Hashed browser ID"]);
+  ensureSheet(spreadsheet, "Downloaders", ["First download click (UTC)", "Hashed browser ID"]);
   ensureSheet(spreadsheet, "Installations", ["First launch (UTC)", "Hashed installation ID"]);
   if (!properties.getProperty(SECRET_PROPERTY)) {
     properties.setProperty(SECRET_PROPERTY, Utilities.getUuid() + Utilities.getUuid());
@@ -36,7 +36,7 @@ function doGet(e) {
   try {
     const result = recordUnique(action === "visit" ? "Visitors" : "Downloaders", id);
     if (result.isNew && action === "download") {
-      notify("New A1 FAMILY MEDIA downloader", "A new browser identifier completed its first recorded APK download.\n\nUnique downloaders: " + result.count);
+      notify("New A1 FAMILY MEDIA downloader", "A new browser identifier clicked the official APK download link for the first time.\n\nUnique downloaders: " + result.count);
     }
     return output({ ok: true, isNew: result.isNew });
   } catch (error) {
