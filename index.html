@@ -152,7 +152,13 @@
       if (!response.ok) throw new Error('Release archive unavailable');
       return response.json();
     }).then(releases => {
-      const published = releases.filter(release => !release.draft && !release.prerelease);
+      const published = releases.filter(release => {
+        if (release.draft || release.prerelease) return false;
+        const match = String(release.tag_name || '').match(/^v?(\d+)\.(\d+)(?:\.(\d+))?/i);
+        if (!match) return false;
+        const version = [Number(match[1]), Number(match[2]), Number(match[3] || 0)];
+        return version[0] > 1 || (version[0] === 1 && version[1] >= 6);
+      });
       const latest = published[0];
       const counter = document.getElementById('apk-download-count');
       const latestVersion = document.getElementById('latest-version');
