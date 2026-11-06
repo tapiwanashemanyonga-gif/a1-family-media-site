@@ -107,7 +107,12 @@
 
     <section class="about-section" id="about"><div class="about-inner"><div><p class="eyebrow">THE A1 EXPERIENCE</p><h2>Your media,<br><span>your way.</span></h2></div><p>A1 FAMILY MEDIA brings your local audio and video together in a clean Android experience. Whether you are settling in with a playlist or opening a video, your media is never far away.</p></div></section>
 
-    <section class="updates-section section-wrap" id="updates"><div class="section-heading"><p class="eyebrow">STAY UP TO DATE</p><h2>New improvements.<br><span>One place to find them.</span></h2><p>Check the latest A1 FAMILY MEDIA version and read what's changed.</p></div><div class="updates-panel"><div><span class="update-label">LATEST VERSION</span><strong id="latest-version">1.6</strong><span id="release-date">Released 3 November 2026</span></div><div class="download-count" aria-live="polite"><span class="update-label">TOTAL APK DOWNLOADS</span><strong id="apk-download-count">Loading…</strong><span>Official release downloads</span></div><a class="button button-primary" href="https://github.com/tapiwanashemanyonga-gif/Media-player/releases/latest/download/app-release.apk">Download latest APK <span>↓</span></a></div><p class="update-footnote">If you already have A1 FAMILY MEDIA installed, open the app to check for an update notice. Updates are also listed here.</p></section>
+    <section class="updates-section section-wrap" id="updates"><div class="section-heading"><p class="eyebrow">STAY UP TO DATE</p><h2>New improvements.<br><span>One place to find them.</span></h2><p>Check the latest A1 FAMILY MEDIA version and read what's changed.</p></div><div class="updates-panel"><div><span class="update-label">LATEST VERSION</span><strong id="latest-version">1.6</strong><span id="release-date">Released 3 November 2026</span></div><div class="download-count" aria-live="polite"><span class="update-label">TOTAL APK DOWNLOADS</span><strong id="apk-download-count">Loading…</strong><span>Official release downloads</span></div><a class="button button-primary" href="https://github.com/tapiwanashemanyonga-gif/Media-player/releases/latest/download/app-release.apk">Download latest APK <span>↓</span></a></div><p class="update-footnote">If you already have A1 FAMILY MEDIA installed, open the app to check for an update notice. Updates are also listed here.</p>
+      <div class="release-history" id="release-history">
+        <div class="release-history-heading"><div><span class="eyebrow">A1 VERSION ARCHIVE</span><h3>Download previous versions too.</h3><p>Choose any published A1 FAMILY MEDIA release. Older versions remain available.</p></div><span class="release-total" id="release-total">Loading releases…</span></div>
+        <div class="release-list" id="release-list" aria-live="polite"><p class="release-state">Loading all official versions…</p></div>
+      </div>
+    </section>
     <section class="download-section section-wrap" id="download"><div class="download-panel"><div class="download-orb"></div><p class="eyebrow">A1 FAMILY MEDIA</p><h2>Take your media<br>with you.</h2><p>Download the official Android app and enjoy your music and videos in one place.</p><a class="button button-primary" href="https://github.com/tapiwanashemanyonga-gif/Media-player/releases/latest/download/app-release.apk">Download A1 FAMILY MEDIA <span>↓</span></a><span class="download-note">Android APK · Official release</span></div></section>
     <section class="feedback-section section-wrap" id="feedback">
       <div class="section-heading"><p class="eyebrow">YOUR VOICE SHAPES A1</p><h2>Tell us what<br><span>could be better.</span></h2><p>Share an upgrade idea, report a problem, or suggest an improvement. You do not need a GitHub account.</p></div>
@@ -143,17 +148,108 @@
       if (date && release.releasedAt) date.textContent = 'Released ' + new Date(release.releasedAt + 'T00:00:00').toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
     }).catch(() => {});
 
-    fetch('https://api.github.com/repos/tapiwanashemanyonga-gif/Media-player/releases/latest', { cache: 'no-store', headers: { 'Accept': 'application/vnd.github+json' } }).then(response => {
-      if (!response.ok) throw new Error('Download statistics unavailable');
+    fetch('https://api.github.com/repos/tapiwanashemanyonga-gif/Media-player/releases?per_page=100', { cache: 'no-store', headers: { 'Accept': 'application/vnd.github+json' } }).then(response => {
+      if (!response.ok) throw new Error('Release archive unavailable');
       return response.json();
-    }).then(release => {
-      const apk = (release.assets || []).find(asset => asset.name === 'app-release.apk');
+    }).then(releases => {
+      const published = releases.filter(release => !release.draft && !release.prerelease);
+      const latest = published[0];
       const counter = document.getElementById('apk-download-count');
-      if (counter && apk) counter.textContent = Number(apk.download_count || 0).toLocaleString();
-      else if (counter) counter.textContent = 'Not available';
+      const latestVersion = document.getElementById('latest-version');
+      const releaseDate = document.getElementById('release-date');
+      const list = document.getElementById('release-list');
+      const total = document.getElementById('release-total');
+
+      if (latest) {
+        const latestApk = (latest.assets || []).find(asset => asset.name === 'app-release.apk');
+        const tagVersion = String(latest.tag_name || '').replace(/^v/i, '');
+        if (latestVersion && tagVersion) latestVersion.textContent = tagVersion;
+        if (releaseDate && latest.published_at) releaseDate.textContent = 'Released ' + new Date(latest.published_at).toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
+        if (counter && latestApk) counter.textContent = Number(latestApk.download_count || 0).toLocaleString();
+        else if (counter) counter.textContent = 'Not available';
+      } else if (counter) {
+        counter.textContent = 'No releases yet';
+      }
+
+      if (total) total.textContent = published.length + (published.length === 1 ? ' published version' : ' published versions');
+      if (!list) return;
+      list.replaceChildren();
+      if (!published.length) {
+        const empty = document.createElement('p');
+        empty.className = 'release-state';
+        empty.textContent = 'No published versions are available yet.';
+        list.appendChild(empty);
+        return;
+      }
+
+      published.forEach(release => {
+        const apk = (release.assets || []).find(asset => asset.name === 'app-release.apk');
+        const article = document.createElement('article');
+        article.className = 'release-card';
+        const details = document.createElement('div');
+        details.className = 'release-details';
+        const heading = document.createElement('div');
+        heading.className = 'release-title-row';
+        const title = document.createElement('h4');
+        title.textContent = release.name || ('A1 FAMILY MEDIA ' + String(release.tag_name || '').replace(/^v/i, ''));
+        heading.appendChild(title);
+        if (latest && release.id === latest.id) {
+          const badge = document.createElement('span');
+          badge.className = 'release-latest-badge';
+          badge.textContent = 'LATEST';
+          heading.appendChild(badge);
+        }
+        const meta = document.createElement('p');
+        const date = release.published_at ? new Date(release.published_at).toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' }) : 'Release date unavailable';
+        const size = apk && apk.size ? ' · ' + (apk.size / 1048576).toFixed(1) + ' MB' : '';
+        meta.textContent = String(release.tag_name || '') + ' · ' + date + size;
+        const notes = document.createElement('p');
+        notes.className = 'release-notes';
+        notes.textContent = (release.body || 'Release notes are available on GitHub.').slice(0, 260);
+        details.append(heading, meta, notes);
+        article.appendChild(details);
+        const actions = document.createElement('div');
+        actions.className = 'release-actions';
+        if (apk && /^https:\/\/github\.com\//i.test(apk.browser_download_url || '')) {
+          const download = document.createElement('a');
+          download.className = 'button button-primary';
+          download.href = apk.browser_download_url;
+          download.textContent = 'Download APK ↓';
+          actions.appendChild(download);
+        } else {
+          const unavailable = document.createElement('span');
+          unavailable.className = 'release-unavailable';
+          unavailable.textContent = 'APK not available';
+          actions.appendChild(unavailable);
+        }
+        if (/^https:\/\/github\.com\//i.test(release.html_url || '')) {
+          const notesLink = document.createElement('a');
+          notesLink.className = 'release-notes-link';
+          notesLink.href = release.html_url;
+          notesLink.target = '_blank';
+          notesLink.rel = 'noopener';
+          notesLink.textContent = 'Release details';
+          actions.appendChild(notesLink);
+        }
+        article.appendChild(actions);
+        list.appendChild(article);
+      });
     }).catch(() => {
       const counter = document.getElementById('apk-download-count');
+      const list = document.getElementById('release-list');
+      const total = document.getElementById('release-total');
       if (counter) counter.textContent = 'Temporarily unavailable';
+      if (total) total.textContent = 'Unable to load releases';
+      if (list) {
+        const error = document.createElement('p');
+        error.className = 'release-state';
+        error.textContent = 'The version archive could not load right now. Please try again shortly or view releases on GitHub.';
+        const link = document.createElement('a');
+        link.href = 'https://github.com/tapiwanashemanyonga-gif/Media-player/releases';
+        link.textContent = ' View all GitHub releases';
+        error.appendChild(link);
+        list.replaceChildren(error);
+      }
     });
 
     const feedbackForm = document.getElementById('feedback-form');
