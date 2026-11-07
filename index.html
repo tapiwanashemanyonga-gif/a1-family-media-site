@@ -171,8 +171,12 @@
         const tagVersion = String(latest.tag_name || '').replace(/^v/i, '');
         if (latestVersion && tagVersion) latestVersion.textContent = tagVersion;
         if (releaseDate && latest.published_at) releaseDate.textContent = 'Released ' + new Date(latest.published_at).toLocaleDateString(undefined, { day: 'numeric', month: 'long', year: 'numeric' });
-        if (counter && latestApk) counter.textContent = Number(latestApk.download_count || 0).toLocaleString();
-        else if (counter) counter.textContent = 'Not available';
+        // Count downloads across every version shown in the public archive (v1.6+).
+        const totalApkDownloads = published.reduce((sum, release) => {
+          const apk = (release.assets || []).find(asset => asset.name === 'app-release.apk');
+          return sum + (apk ? Number(apk.download_count || 0) : 0);
+        }, 0);
+        if (counter) counter.textContent = totalApkDownloads.toLocaleString();
       } else if (counter) {
         counter.textContent = 'No releases yet';
       }

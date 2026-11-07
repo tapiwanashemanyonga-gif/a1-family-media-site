@@ -1,7 +1,7 @@
 {
-  "versionName": "1.6",
-  "versionCode": 7,
+  "versionName": "1.8",
+  "versionCode": 9,
   "downloadUrl": "https://github.com/tapiwanashemanyonga-gif/Media-player/releases/latest/download/app-release.apk",
-  "releaseNotes": "A1 FAMILY MEDIA 1.6 — introduces an automatic in-app update check. When a newer official release is available, the app will show an update message and a download option.",
-  "releasedAt": "2026-11-03"
+  "releaseNotes": "A1 FAMILY MEDIA 1.8 playback hotfix. This rebuild fixes song-list advert viewport isolation so the advert cannot overlap the next song row. Existing release history is preserved.",
+  "releasedAt": "2026-11-06"
 }
